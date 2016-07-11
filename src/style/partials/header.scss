@@ -1,0 +1,124 @@
+.header-nav {
+  height: 60px;
+  display: block;
+  background: $header-bg;
+  color: $header-color;
+  position: relative;
+  z-index: 3;
+  .row {
+    height: 100%;
+  }
+  &_btn-menu {
+    border: 0;
+    background: 0;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      @include sprite(menu);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+    }
+    &:hover {
+      background: $header-btn_hover;
+    }
+  }
+  &_btn {
+    border: 0;
+    background: 0;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    outline: none;
+    cursor: pointer;
+    padding: 0 30px;
+    font-size: 16px;
+    &:hover {
+      background: $header-btn_hover;
+      text-shadow: 1px 0 0 $header-color;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    &__ov {
+      border-left: 1px solid rgba($header-btn_border, .1);
+      border-right: 1px solid rgba($header-btn_border, .1);
+      &::before {
+        @include sprite(overview);
+      }
+    }
+    &__det {
+      &::before {
+        @include sprite(details);
+        margin-top: -2px;
+      }
+    }
+    &__active {
+      border-color: $header-btn_border;
+      background: $header-btn_hover;
+      text-shadow: 1px 0 0 $header-color;
+    }
+  }
+  &_social {
+    float: right;
+    height: 60px;
+    margin-right: 20px;
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+  &_social-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    color: $header-social_color;
+  }
+  &_social-btn {
+    background: 0;
+    border: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 14px;
+    cursor: pointer;
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-nav {
+    &_btn-menu {
+      width: 70px;
+    }
+    &_btn {
+      width: auto;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .header-nav {
+    height: 40px;
+    &_social {
+      display: none;
+    }
+    &_social-btn {
+      font-size: 25px;
+    }
+    &_btn {
+       font-size: 12px;
+     }
+  }
+}

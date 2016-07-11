@@ -1,0 +1,55 @@
+.container-fluid
+  .row
+    .col-xs-12.col-sm-6.col-md-4.sidebar
+      .row
+        .date-holder.col-md-12.col-xs-10
+          .date-holder_nav.date-holder_nav__next
+            %i.fa.fa-angle-right
+          .date-holder_nav.date-holder_nav__prev
+            %i.fa.fa-angle-left
+          .date-holder_wrapper
+            %ul
+              %li.date-holder_item.date-holder_item__active Jun 24
+              %li.date-holder_item Jun 25
+              %li.date-holder_item Jun 26
+              %li.date-holder_item Jun 26
+              %li.date-holder_item Jun 26
+              %li.date-holder_item Jun 26
+      .sidebar-block.is-active
+        .sidebar-block_title.sidebar-block_title__food
+          %span Trattoria Da Ropeton Trattoria Da Ropeton Trattoria Da Ropeton
+          .sidebar-block_address Via Fontana del Ferro, 1, Verona, Italy
+          .sidebar-block_time
+            10.00
+        .sidebar-block_image
+          %img(src="images/sidebar.jpg")
+        .sidebar-block_text Amazing owner who sings and serves the food himself! Experience which you'll never forget and will include to the travel different mockups :)
+        .sidebar-block_roll
+          %i.fa.fa-angle-up
+        .sidebar-block_vehicle
+          %i.fa.fa-taxi
+      .sidebar-block
+        .sidebar-block_title.sidebar-block_title__shop
+          %span Trattoria Da Ropeton
+          .sidebar-block_address Via Fontana del Ferro, 1, Verona, Italy
+          .sidebar-block_time
+            12.00
+        .sidebar-block_image
+          %img(src="images/sidebar.jpg")
+        .sidebar-block_text Amazing owner who sings and serves the food himself! Experience which you'll never forget and will include to the travel different mockups :)
+        .sidebar-block_roll
+          %i.fa.fa-angle-up
+    .col-xs-12.col-sm-6.col-md-8.col-md-offset-4.col-sm-offset-6.map-holder
+      #map.map
+      .map-holder_btn#map-toggle
+        %i.fa.fa-angle-left
+        %i.fa.fa-angle-right
+      .map-tooltip
+        .map-tooltip_title Trattoria Da Ropeton
+          .map-tooltip_address Via Fontana del Ferro, 1, Verona, Italy
+        .map-tooltip_phone
+          %i.fa.fa-phone
+          +390458030040
+        %a.map-tooltip_web(href="#")
+          %i.fa.fa-link
+          trattoriadaropeton.it?

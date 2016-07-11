@@ -1,0 +1,130 @@
+.map-holder {
+  position: absolute;
+  bottom: 100px;
+  top: 60px;
+  overflow: hidden;
+  padding: 0;
+  transition: all .3s;
+  &_btn {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 35px;
+    height: 40px;
+    @include valign();
+    text-align: center;
+    border-radius: 0 8px 8px 0;
+    font-size: 30px;
+    background: $map-button_bg;
+    box-shadow: 0 2px 0 0 $map-button_shadow;
+    cursor: pointer;
+    .fa-angle-right {
+      display: none;
+    }
+    &.active {
+      .fa-angle-right {
+        display: inline-block;
+      }
+      .fa-angle-left {
+        display: none;
+      }
+    }
+  }
+  &.active {
+    margin: 0;
+    width: 100%;
+  }
+}
+.map {
+  width: 200%;
+  height: 100%;
+}
+.map-tooltip {
+  background: $map-tooltip_bg;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+  border-radius: 4px;
+  border: 1px solid $map-tooltip_border;
+  padding: 16px 20px;
+  font-size: 12px;
+  white-space: nowrap;
+  &_title {
+    padding-left: 20px;
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 20px;
+    &::before {
+      content: "";
+      position: absolute;
+      @include sprite(dog);
+      left: 0;
+      top: 6px;
+    }
+  }
+  &_address {
+    color: $map-tooltip_address;
+    font-size: 12px;
+  }
+  &_phone {
+    margin-bottom: 3px;
+  }
+  &_phone,
+  &_web {
+    i {
+      font-size: 14px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+}
+@media (max-width: 1367px) {
+  .map-holder {
+    bottom: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+  .map-holder {
+    left: 100%;
+    overflow: visible;
+    border-left: 2px solid $map-button_bg;
+    top: 40px;
+    &_btn {
+      left: auto;
+      right: 100%;
+      margin-right: 10px;
+      border-radius: 8px 0 0 8px;
+      top: 20px;
+      .fa-angle-right {
+        display: inline-block;
+      }
+      .fa-angle-left {
+        display: none;
+      }
+    }
+    &.active {
+      left: 0;
+      width: 100%;
+      .map-holder_btn {
+        left: 0;
+        right: auto;
+        margin: 0;
+        border-radius: 0 8px 8px 0;
+        &.active {
+          .fa-angle-right {
+            display: none;
+          }
+          .fa-angle-left {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

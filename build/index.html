@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../aw-font/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+<nav class="header-nav container-fluid"><div class="row"><button class="col-xs-2 col-md-1 col-sm-1 header-nav_btn-menu"></button><button class="header-nav_btn header-nav_btn__ov col-xs-5 col-md-2 col-sm-3">Overview</button><button class="header-nav_btn header-nav_btn__det header-nav_btn__active col-xs-5 col-md-2 col-sm-3">Details</button><div class="header-nav_social"><span class="header-nav_social-title">Share this itinerary:</span><button class="header-nav_social-btn"><i class="fa fa-facebook-square"></i></button><button class="header-nav_social-btn"><i class="fa fa-twitter-square"></i></button></div></div></nav>
+<div class="container-fluid"><div class="row"><div class="col-xs-12 col-sm-6 col-md-4 sidebar"><div class="row"><div class="date-holder col-md-12 col-xs-10"><div class="date-holder_nav date-holder_nav__next"><i class="fa fa-angle-right"></i></div><div class="date-holder_nav date-holder_nav__prev"><i class="fa fa-angle-left"></i></div><div class="date-holder_wrapper"><ul><li class="date-holder_item date-holder_item__active">Jun 24</li><li class="date-holder_item">Jun 25</li><li class="date-holder_item">Jun 26</li><li class="date-holder_item">Jun 26</li><li class="date-holder_item">Jun 26</li><li class="date-holder_item">Jun 26</li></ul></div></div></div><div class="sidebar-block is-active"><div class="sidebar-block_title sidebar-block_title__food"><span>Trattoria Da Ropeton Trattoria Da Ropeton Trattoria Da Ropeton</span><div class="sidebar-block_address">Via Fontana del Ferro, 1, Verona, Italy</div><div class="sidebar-block_time">10.00</div></div><div class="sidebar-block_image"><img src="images/sidebar.jpg" /></div><div class="sidebar-block_text">Amazing owner who sings and serves the food himself! Experience which you'll never forget and will include to the travel different mockups :)</div><div class="sidebar-block_roll"><i class="fa fa-angle-up"></i></div><div class="sidebar-block_vehicle"><i class="fa fa-taxi"></i></div></div><div class="sidebar-block"><div class="sidebar-block_title sidebar-block_title__shop"><span>Trattoria Da Ropeton</span><div class="sidebar-block_address">Via Fontana del Ferro, 1, Verona, Italy</div><div class="sidebar-block_time">12.00</div></div><div class="sidebar-block_image"><img src="images/sidebar.jpg" /></div><div class="sidebar-block_text">Amazing owner who sings and serves the food himself! Experience which you'll never forget and will include to the travel different mockups :)</div><div class="sidebar-block_roll"><i class="fa fa-angle-up"></i></div></div></div><div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-4 col-sm-offset-6 map-holder"><div class="map" id="map"></div><div class="map-holder_btn" id="map-toggle"><i class="fa fa-angle-left"></i><i class="fa fa-angle-right"></i></div><div class="map-tooltip"><div class="map-tooltip_title">Trattoria Da Ropeton<div class="map-tooltip_address">Via Fontana del Ferro, 1, Verona, Italy</div></div><div class="map-tooltip_phone"><i class="fa fa-phone"></i>+390458030040</div><a href="#" class="map-tooltip_web"><i class="fa fa-link"></i>trattoriadaropeton.it?</a></div></div></div></div>
+</div>
+
+<footer class="footer container-fluid"><div class="row"><ul class="footer_nav col-md-4 col-sm-4 col-xs-4"><li><a href="#">Home</a></li><li><a href="#">Itineraries</a></li><li><a href="#">About</a></li></ul><div class="footer_logo col-md-4 col-sm-4 col-xs-4"><img src="images/logo.png" /></div><div class="footer_social col-md-4 col-sm-4 col-xs-4"><button class="footer_btn"><i class="fa fa-facebook-square"></i></button><button class="footer_btn"><i class="fa fa-twitter-square"></i></button><div class="footer_copyright">(c) Wanderist 2014</div></div></div></footer>
+<script src="js/common.js"></script>
+<script>
+    function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 44.540, lng: -78.546},
+            zoom: 8
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+</body>
+</html>

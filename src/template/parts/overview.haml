@@ -1,0 +1,114 @@
+.overview
+  .overview_img
+    %img.overview_img-web(src="images/overview.jpg")
+    %img.overview_img-mob(src="images/overview-mob.jpg")
+    .overview_nav-holder
+      .overview_head ITINERARY
+      .overview_title Trip to Fabulous Las Vegas
+      .overview_nav
+        %span.overview_days 2 days
+        %ul.overview_nav-list
+          %li.overview_nav-item
+            %a.overview_nav-link.overview_nav-link__family(href) family
+          %li.overview_nav-item
+            %a.overview_nav-link.overview_nav-link__food(href) foodie
+          %li.overview_nav-item
+            %a.overview_nav-link.overview_nav-link__shop(href) shopping
+          %li.overview_nav-item
+            %a.overview_nav-link.overview_nav-link__pet(href) pet friendly
+  .overview_content
+    .row
+      .col-md-4.col-sm-5.col-xs-12.overview_expert
+        .row
+          .overview_expert-photo
+            %img(src="images/expert.jpg")
+          .overview_expert-data
+            .overview_expert-title Local Expert
+            .overview_expert-name Audrey Tautou
+            .overview_expert-rating
+              .fa.fa-star.active
+              .fa.fa-star.active
+              .fa.fa-star.active
+              .fa.fa-star
+              .fa.fa-star
+        .overview_progress-block
+          .row
+            .col-lg-2.col-md-2.col-sm-2.col-xs-3 Budget
+            .col-lg-8.col-md-8.col-sm-8.col-xs-6
+              .overview_progress
+                .overview_progress-line(style="width: 100%")
+            .col-lg-2.col-md-2.col-sm-2.col-xs-3 Luxury
+          .row
+            .col-lg-2.col-md-2.col-sm-2.col-xs-3 Relaxed
+            .col-lg-8.col-md-8.col-sm-8.col-xs-6
+              .overview_progress
+                .overview_progress-line(style="width: 60%")
+            .col-lg-2.col-md-2.col-sm-2.col-xs-3 Active
+          .row
+            .col-lg-2.col-md-2.col-sm-2.col-xs-3 Desotate
+            .col-lg-8.col-md-8.col-sm-8.col-xs-6
+              .overview_progress
+                .overview_progress-line(style="width: 40%")
+            .col-lg-2.col-md-2.col-sm-2.col-xs-3 Crowdy
+      .col-md-7.col-sm-6.col-xs-12.col-md-offset-1.col-sm-offset-1
+        .overview_text-title Overview
+        .overview_text
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.
+            Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus... ut, vehicula eu diam.
+            Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+          .overview_text-btn
+            %i.fa.fa-angle-down
+            %i.fa.fa-angle-up
+    .row
+      .acc_holder
+        .acc_item.acc_item__active
+          .acc_item-title
+            .acc_title-body Day 1
+              .acc_title-btn
+                %i.fa.fa-angle-up
+                %i.fa.fa-angle-down
+          .acc_item-content
+            .acc_widget-time
+              .acc_widget-tt 10.00
+              .acc_widget-tb 18.00
+              .acc_widget-tr 15.00
+            .row
+              .col-md-5.col-sm-5.col-xs-12
+                .acc_widget.acc_widget__map
+                  %img(src="images/map.jpg")
+                .acc_widget
+                  %img(src="images/sidebar.jpg")
+                  .acc_widget-text Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+                  %a.acc_widget-map(href)
+                    .acc_widget-map-body Show on the map
+              .col-md-5.col-sm-5.col-xs-12.col-md-offset-2.col-sm-offset-2.col-xs-offset-0
+                .acc_widget
+                  %img(src="images/sidebar.jpg")
+                  .acc_widget-text Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+                  %a.acc_widget-map(href)
+                    .acc_widget-map-body Show on the map
+                .acc_widget
+                  %img(src="images/sidebar.jpg")
+                  .acc_widget-text Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+                  %a.acc_widget-map(href)
+                    .acc_widget-map-body Show on the map
+        .acc_item
+          .acc_item-title
+            .acc_title-body Day 2
+              .acc_title-btn
+                %i.fa.fa-angle-up
+                %i.fa.fa-angle-down
+        .acc_item
+          .acc_item-title
+            .acc_title-body Day 3
+              .acc_title-btn
+                %i.fa.fa-angle-up
+                %i.fa.fa-angle-down
+    .row
+      .create
+        .create_title Love this itinerary?
+        .create_text Use it to create a new contest and local experts will get a better sense of the trip you want
+        .create_btn-holder
+          %button.create_btn Create A New contest
+          %a.create_link(href) Learn more

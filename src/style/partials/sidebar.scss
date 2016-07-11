@@ -1,0 +1,222 @@
+.sidebar {
+  background: $sidebar-bg;
+  padding: 40px 40px 0;
+  position: absolute;
+  top: 60px;
+  bottom: 100px;
+  overflow: auto;
+  &-block {
+    background: $sidebar-block_bg;
+    box-shadow: 0 1px 0 2px rgba($sidebar-block_shadow, .1);
+    border-radius: 10px;
+    margin-bottom: 80px;
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      height: 80px;
+      border-left: 1px solid $sidebar-vehicle_border;
+    }
+    &:last-child {
+      margin-bottom: 20px;
+      &::after {
+        display: none;
+      }
+    }
+    &_title {
+      padding: 16px 20px 20px 40px;
+      font-size: 19px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 20px;
+      }
+      &__food {
+        &::before {
+          @include sprite(food);
+        }
+      }
+      &__shop {
+        &::before {
+          @include sprite(shop);
+        }
+      }
+      span {
+        display: inline-block;
+        max-width: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    &_address {
+      color: $sidebar-block_address;
+      font-size: 14px;
+      margin-top: -9px;
+    }
+    &_text {
+      display: none;
+      padding: 16px 20px 32px;
+      line-height: 17px;
+    }
+    &_image {
+      display: none;
+      img {
+        width: 100%;
+      }
+    }
+    &_roll {
+      display: none;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      cursor: pointer;
+      font-size: 20px;
+      color: $sidebar-block_roll;
+      text-align: center;
+      @include valign();
+    }
+    &_time {
+      position: absolute;
+      top: 20px;
+      right: 18px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      &:before {
+        content: "";
+        display: inline-block;
+        margin-right: 5px;
+        @include sprite(time);
+      }
+    }
+    &_vehicle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      top: 100%;
+      border: 1px solid $sidebar-vehicle_border;
+      @include valign();
+      text-align: center;
+      background: $sidebar-bg;
+      margin-top: 22px;
+      z-index: 2;
+      font-size: 18px;
+    }
+    &.is-active {
+      cursor: default;
+      .sidebar-block_image,
+      .sidebar-block_text,
+      .sidebar-block_roll {
+        display: block;
+      }
+    }
+  }
+}
+.date-holder {
+  position: relative;
+  margin-bottom: 30px;
+  &_nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+    &__next {
+      right: 25px;
+    }
+    &__prev {
+      left: 25px;
+    }
+  }
+  &_wrapper {
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid $date-holder-border;
+    list-style: none;
+    height: 30px;
+    margin: 0 45px;
+    white-space: nowrap;
+  }
+  &_item {
+    width: 33.333%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border-left: 1px solid $date-holder-border;
+    cursor: pointer;
+    &__active {
+      background: $date-holder-border;
+    }
+    &:first-child {
+      border: 0;
+    }
+  }
+}
+
+@media (max-width: 1367px) {
+  .sidebar {
+    bottom: 70px;
+  }
+}
+@media (max-width: 1200px) {
+  .sidebar {
+    padding: 40px 15px 0;
+  }
+}
+@media (max-width: 767px) {
+  .sidebar {
+    padding-top: 20px;
+    top: 40px;
+    position: static;
+  }
+  .sidebar-block {
+    &_title {
+      font-size: 16px;
+      font-weight: 600;
+      padding: 6px 20px 10px 40px;
+      &::before {
+        top: 10px;
+      }
+    }
+    &_text {
+      padding: 6px 20px 22px;
+    }
+    &_roll {
+      bottom: 0;
+    }
+    &_address {
+      font-weight: 400;
+      margin-top: 0;
+    }
+    &_time {
+      font-size: 12px;
+      top: 10px;
+    }
+  }
+  .date-holder {
+    margin-bottom: 20px;
+  }
+}
+

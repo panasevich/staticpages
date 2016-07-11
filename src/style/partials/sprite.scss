@@ -1,0 +1,172 @@
+$sprite: (
+    details: (
+    offset-x: -48px,
+    offset-y: -74px,
+    width: 20px,
+    height: 16px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    dog: (
+    offset-x: -106px,
+    offset-y: -74px,
+    width: 14px,
+    height: 14px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    dogwhite: (
+    offset-x: -45px,
+    offset-y: -93px,
+    width: 20px,
+    height: 20px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    family: (
+    offset-x: 0px,
+    offset-y: -93px,
+    width: 23px,
+    height: 20px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    food: (
+    offset-x: -30px,
+    offset-y: -74px,
+    width: 18px,
+    height: 18px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    foodwhite: (
+    offset-x: -65px,
+    offset-y: -93px,
+    width: 13px,
+    height: 20px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    map-marker: (
+    offset-x: -78px,
+    offset-y: -93px,
+    width: 10px,
+    height: 15px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    menu: (
+    offset-x: 0px,
+    offset-y: -74px,
+    width: 30px,
+    height: 19px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    overview: (
+    offset-x: -86px,
+    offset-y: -74px,
+    width: 20px,
+    height: 14px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    path: (
+    offset-x: 0px,
+    offset-y: 0px,
+    width: 193px,
+    height: 74px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    shop: (
+    offset-x: -68px,
+    offset-y: -74px,
+    width: 18px,
+    height: 16px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    shopwhite: (
+    offset-x: -23px,
+    offset-y: -93px,
+    width: 22px,
+    height: 20px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+    time: (
+    offset-x: -120px,
+    offset-y: -74px,
+    width: 13px,
+    height: 13px,
+    total-width: 193px,
+    total-height: 113px,
+    image: '../images/sprite.png'
+    ),
+);
+
+
+    @mixin sprite-size($image) {
+    background-size: map-get(map-get($sprite, $image), 'total-width') map-get(map-get($sprite, $image), 'total-height');
+    }
+
+    @mixin sprite-width($image) {
+    width: map-get(map-get($sprite, $image), 'width');
+    }
+
+    @mixin sprite-height($image) {
+    height: map-get(map-get($sprite, $image), 'height');
+    }
+
+    @mixin sprite-position($image) {
+    background-position: map-get(map-get($sprite, $image), 'offset-x') map-get(map-get($sprite, $image), 'offset-y');
+    }
+
+    @mixin sprite-image($image) {
+    background-image: url(map-get(map-get($sprite, $image), 'image'));
+    }
+
+    @mixin sprite-image-retina($image) {
+    $image-path: map-get(map-get($sprite, $image), 'image');
+    $image-path-retina: str-slice($image-path, 1, str-index($image-path, '.png') - 1) + '-2x.png';
+
+    background-image: url($image-path-retina);
+    }
+
+    @mixin sprite($image, $size: true) {
+    @include sprite-image($image);
+    @include sprite-position($image);
+    background-repeat: no-repeat;
+
+    @if $size {
+    @include sprite-width($image);
+    @include sprite-height($image);
+    }
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+
+    @include sprite-size($image);
+    @include sprite-image-retina($image);
+
+    }
+    }
+
